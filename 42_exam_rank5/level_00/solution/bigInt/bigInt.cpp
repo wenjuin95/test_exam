@@ -1,4 +1,4 @@
-#include "bigint.hpp"
+#include "bigInt.hpp"
 #include <sstream> // For ostringstream
 #include <algorithm> // For reverse
 
@@ -68,7 +68,7 @@ bool bigint::operator!=(const bigint& other) const {
 }
 
 bool bigint::operator<(const bigint& other) const {
-    if (this->digits.size() != other.digits.size()) 
+    if (this->digits.size() != other.digits.size())
         return this->digits.size() < other.digits.size();
     return std::lexicographical_compare(this->digits.rbegin(), this->digits.rend(),
                                         other.digits.rbegin(), other.digits.rend());
