@@ -6,25 +6,26 @@ searchable_tree_bag::searchable_tree_bag(const searchable_tree_bag &src) : TreeB
 
 searchable_tree_bag &searchable_tree_bag::operator=(const searchable_tree_bag &src)
 {
-    if (this != &src)
-    {
-        TreeBag::operator=(src);
-    }
-    return *this;
+	if (this != &src)
+	{
+		TreeBag::operator=(src);
+	}
+	return *this;
 }
 
-searchable_tree_bag::~searchable_tree_bag() {}
+searchable_tree_bag::~searchable_tree_bag(){}
 
-bool searchable_tree_bag::has(int value) const {
-    Node *current = root;
-    while (current)
-    {
-        if (current->value == value)
-            return true;
-        else if (current->value > value)
-            current = current->left;
-        else if (current->value < value)
-            current = current->right;
-    }
-    return false;
+bool searchable_tree_bag::has(int value) const
+{
+	Node *curr = root;
+	while (curr)
+	{
+		if (curr->value == value)
+			return true;
+		else if (curr->value < value)
+			curr = curr->right;
+		else
+			curr = curr->left;
+	}
+	return false;
 }
