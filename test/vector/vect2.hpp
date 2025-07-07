@@ -1,48 +1,51 @@
 #ifndef VECT2_HPP
 #define VECT2_HPP
 
-#include <iostream>
 #include <vector>
-#include <ostream> //?
+#include <ostream>
+#include <iostream>
 
-class Vect2 {
-    private:
-        std::vector<int> _container;
-    public:
-        Vect2();
-        Vect2(int v1, int v2);
-        Vect2(const Vect2 &src);
-        Vect2 operator=(const Vect2 &src);
-        ~Vect2();
+class vect2
+{
+	private:
+		std::vector<int> _con;
+	public:
+		vect2();
+		vect2(int v1, int v2);
+		vect2(const vect2 &src);
+		vect2 &operator=(const vect2 &src);
+		~vect2();
 
-        int getContainer(int array) const;
+		int get_con(int arr) const;
 
-        Vect2 operator+(int nb) const;
-        Vect2 operator+(const Vect2 &other) const;
-        Vect2 operator++(void) const;
-        Vect2 operator++(int nb) const;
+		vect2 operator+(int v) const;
+		vect2 operator+(const vect2 &src) const;
+		vect2 &operator++(void);
+		vect2 operator++(int);
 
-        Vect2 operator-(int nb) const;
-        Vect2 operator-(const Vect2 &other) const;
-        Vect2 operator--(void) const;
-        Vect2 operator--(int nb) const;
+		vect2 operator-(int v) const;
+		vect2 operator-(const vect2 &src) const;
+		vect2 &operator--(void);
+		vect2 operator--(int);
 
-        Vect2 operator*(int nb);
-        Vect2 operator*(const Vect2 &other);
+		vect2 operator*(int v) const;
+		vect2 operator*(const vect2 &src) const;
 
-        bool operator==(const Vect2 &other) const;
-        bool operator!=(const Vect2 &other) const;
-        Vect2 operator+=(int nb);
-        Vect2 operator+=(const Vect2 &other);
-        Vect2 operator+=(int nb);
-        Vect2 operator+=(const Vect2 &other);
-        Vect2 operator-=(int nb);
-        Vect2 operator-=(const Vect2 &other);
-        Vect2 operator*=(int nb);
-        Vect2 operator*=(const Vect2 &other);
+		bool operator==(const vect2 &src) const;
+		bool operator!=(const vect2 &src) const;
 
+		vect2 operator+=(int v);
+		vect2 operator+=(const vect2 &src);
+		vect2 operator-=(int v);
+		vect2 operator-=(const vect2 &src);
+		vect2 operator*=(int v);
+		vect2 operator*=(const vect2 &src);
+
+		int &operator[](int pos);
+		int operator[](int pos) const;
 };
 
-std::ostream &operator<<(std::ostream &out, const Vect2 &src);
+vect2 operator*(int v, const vect2 &src);
+std::ostream &operator<<(std::ostream &out, const vect2 &src);
 
 #endif
