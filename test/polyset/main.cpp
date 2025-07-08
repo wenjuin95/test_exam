@@ -66,6 +66,14 @@ int main(int ac, char **av)
 
 	std::cout << "----- set a (after clear and insert):\n";
 	sa.print();
+
+    std::cout << "test\n";
+    std::cout << "test\n";
+    std::cout << "test\n";
+    std::cout << "test\n";
+    std::cout << "test\n";
+    std::cout << "test\n";
+    
 }
 
 //c++ -I ../../42_exam_rank5/level_00/solution/PolySet ../../42_exam_rank5/level_00/solution/PolySet/ArrayBag.cpp ../../42_exam_rank5/level_00/solution/PolySet/TreeBag.cpp searchable_array_bag.cpp searchable_tree_bag.cpp set.cpp main.cpp
