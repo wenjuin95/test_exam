@@ -1,0 +1,38 @@
+#include <sys/select.h>
+
+int select(int nfds, fd_set *readfds, fd_set *writefds,
+           fd_set *exceptfds, struct timeval *timeout);
+
+fd_set
+
+	A bitmask representing a set of file descriptors.
+
+	You can monitor:
+
+	Read: Is data available to read? (e.g. recv())
+
+	Write: Is it okay to write without blocking? (e.g. send())
+
+	Except: Exceptional condition (rarely used for TCP).
+
+You manipulate fd_set using these macros:
+
+Macro				Description
+FD_ZERO(&set)		Clear all fds from the set
+FD_SET(fd, &set)	Add fd to the set
+FD_CLR(fd, &set)	Remove fd from the set
+FD_ISSET(fd, &set)	Check if fd is in the set (after select)
+
+Param				Description
+nfds				Highest fd + 1 (used to know how many fds to scan)
+readfds				FDs to check for readability
+writefds			FDs to check for writability
+exceptfds			FDs to check for exceptional conditions
+timeout				NULL = wait forever. Zeroed = poll. Can set delay.
+
+
+int sprintf(char *str, const char *format, ...);
+- It works just like printf() with format specifiers (%d, %s, etc.).
+- Instead of printing to the screen, it writes formatted text to a char buffer.
+- The resulting string is null-terminated (\0).
+- Returns the number of characters written (excluding the null byte).
