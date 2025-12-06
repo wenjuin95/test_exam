@@ -146,7 +146,7 @@ void accept_connection(int listener) {
 int main(int ac, char **av) {
 	//check line
 	if (ac != 2) {
-		write(2, "wrong argument\n", 26);
+		write(2, "Wrong number of arguments\n", 26);
 		return 1;
 	}
 
